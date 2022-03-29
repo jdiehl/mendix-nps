@@ -1,10 +1,11 @@
-import { ReactElement, createElement } from "react";
+import { ReactElement, createElement, Fragment } from "react";
 import { Big } from "big.js";
 import { NPSControls } from "./components/NPSControls";
 
 import { NPSContainerProps } from "../typings/NPSProps";
 
 import "./ui/NPS.css";
+import { Alert } from "./components/Alert";
 
 export function NPS({ npsAttribute, onChange }: NPSContainerProps): ReactElement | null {
     if (!npsAttribute || npsAttribute.status !== "available" || npsAttribute.value === undefined) {
@@ -18,5 +19,10 @@ export function NPS({ npsAttribute, onChange }: NPSContainerProps): ReactElement
         }
     };
 
-    return <NPSControls value={npsAttribute.value.toNumber()} onChange={update} />;
+    return (
+        <Fragment>
+            <NPSControls value={npsAttribute.value.toNumber()} onChange={update} />
+            <Alert>{npsAttribute.validation}</Alert>
+        </Fragment>
+    );
 }
