@@ -21,6 +21,10 @@ export function NPS({ npsAttribute, onChange }: NPSContainerProps): ReactElement
 
     return (
         <Fragment>
+            <div className="nps-labels">
+                <span>Disagree</span>
+                <span>Agree</span>
+            </div>
             <NPSControls value={npsAttribute.value.toNumber()} onChange={update} />
             <Alert>{npsAttribute.validation}</Alert>
         </Fragment>

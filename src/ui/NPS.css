@@ -22,7 +22,8 @@ Place your custom CSS here
 }
 
 .nps-rating div.active {
-  background-color: #ccc;
+  color: #fff;
+  background-color: #24276c;
 }
 
 .nps-rating div:first-child {
@@ -34,4 +35,11 @@ Place your custom CSS here
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-right: 1px solid #aaa;
+}
+
+.nps-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 1px 8px;
 }
